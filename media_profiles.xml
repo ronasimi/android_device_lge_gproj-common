@@ -175,21 +175,21 @@
              frameRate="30" />
     <!-- [G][AUDIO_FWK_Start] 2012-07-12, sunghun1.jung@lge.com, [common] Change Audio Profile-->
       <Audio codec="aac"
-             bitRate="320000"
+             bitRate="96000"
              sampleRate="48000"
              channels="2" />
     </EncoderProfile>
 
     <EncoderProfile quality="1080p" fileFormat="mp4" duration="30">
       <Video codec="h264"
-             bitRate="20000000"
+             bitRate="8000000"
              width="1920"
              height="1088"
              frameRate="30" />
       <Audio codec="aac"
-             bitRate="320000"
-             sampleRate="48000"
-             channels="2" />
+             bitRate="96000"
+             sampleRate="16000"
+             channels="1" />
     </EncoderProfile>
 
     <EncoderProfile quality="timelapselow" fileFormat="mp4" duration="30">
@@ -278,22 +278,22 @@
         <!-- [G][AUDIO_FWK_Start] 2012-07-12, sunghun1.jung@lge.com, [common] Change Audio Profile-->
         <!-- audio setting is ignored -->
         <Audio codec="aac"
-               bitRate="320000"
+               bitRate="96000"
                sampleRate="48000"
                channels="2" />
     </EncoderProfile>
 
     <EncoderProfile quality="timelapse1080p" fileFormat="mp4" duration="30">
       <Video codec="h264"
-             bitRate="20000000"
+             bitRate="14000000"
              width="1920"
              height="1088"
              frameRate="30" />
         <!-- audio setting is ignored -->
         <Audio codec="aac"
-               bitRate="320000"
-               sampleRate="48000"
-               channels="2" />
+               bitRate="96000"
+               sampleRate="16000"
+               channels="1" />
     </EncoderProfile>
 
     <ImageEncoding quality="100" />
@@ -523,6 +523,18 @@
       minBitRate="8000" maxBitRate="320000"
       minSampleRate="8000" maxSampleRate="48000"
       minChannels="1" maxChannels="2" />
+
+  <!-- [G][AUDIO_FWK_Start] 2012-07-12, sunghun1.jung@lge.com, [common] Support AAC+, AAC_ELD Encoding {-->
+  <AudioEncoderCap name="heaac" enabled="true"
+	minBitRate="8000" maxBitRate="64000"
+	minSampleRate="16000" maxSampleRate="48000"
+	minChannels="1" maxChannels="1" />
+
+  <AudioEncoderCap name="aaceld" enabled="true"
+	minBitRate="16000" maxBitRate="192000"
+	minSampleRate="16000" maxSampleRate="48000"
+	minChannels="1" maxChannels="1" />
+  <!-- [G][AUDIO_FWK_Start] 2012-07-12, sunghun1.jung@lge.com, [common] Support AAC+, AAC_ELD Encoding }-->
 
   <AudioEncoderCap name="amrwb" enabled="true"
         minBitRate="6600" maxBitRate="23050"
