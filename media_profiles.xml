@@ -39,7 +39,7 @@
   <!ATTLIST Audio sampleRate CDATA #REQUIRED>
   <!ATTLIST Audio channels (1|2) #REQUIRED>
   <!ELEMENT ImageEncoding EMPTY>
-  <!ATTLIST ImageEncoding quality (90|80|70|60|50|40) #REQUIRED>
+  <!ATTLIST ImageEncoding quality (100|100|100|60|50|40) #REQUIRED>
   <!ELEMENT ImageDecoding EMPTY>
   <!ATTLIST ImageDecoding memCap CDATA #REQUIRED>
   <!ELEMENT Camera EMPTY>
@@ -108,7 +108,7 @@
       <Video codec="h264"
              bitRate="8000000"
              width="1920"
-             height="1088"
+             height="1080"
              frameRate="30" />
       <Audio codec="aac"
              bitRate="96000"
@@ -175,21 +175,21 @@
              frameRate="30" />
     <!-- [G][AUDIO_FWK_Start] 2012-07-12, sunghun1.jung@lge.com, [common] Change Audio Profile-->
       <Audio codec="aac"
-             bitRate="96000"
+             bitRate="320000"
              sampleRate="48000"
              channels="2" />
     </EncoderProfile>
 
     <EncoderProfile quality="1080p" fileFormat="mp4" duration="30">
       <Video codec="h264"
-             bitRate="8000000"
+             bitRate="20000000"
              width="1920"
-             height="1088"
+             height="1080"
              frameRate="30" />
       <Audio codec="aac"
-             bitRate="96000"
-             sampleRate="16000"
-             channels="1" />
+             bitRate="320000"
+             sampleRate="48000"
+             channels="2" />
     </EncoderProfile>
 
     <EncoderProfile quality="timelapselow" fileFormat="mp4" duration="30">
@@ -208,7 +208,7 @@
       <Video codec="h264"
              bitRate="14000000"
              width="1920"
-             height="1088"
+             height="1080"
              frameRate="30" />
       <Audio codec="aac"
              bitRate="96000"
@@ -278,28 +278,28 @@
         <!-- [G][AUDIO_FWK_Start] 2012-07-12, sunghun1.jung@lge.com, [common] Change Audio Profile-->
         <!-- audio setting is ignored -->
         <Audio codec="aac"
-               bitRate="96000"
+               bitRate="320000"
                sampleRate="48000"
                channels="2" />
     </EncoderProfile>
 
     <EncoderProfile quality="timelapse1080p" fileFormat="mp4" duration="30">
       <Video codec="h264"
-             bitRate="14000000"
+             bitRate="20000000"
              width="1920"
-             height="1088"
+             height="1080"
              frameRate="30" />
         <!-- audio setting is ignored -->
         <Audio codec="aac"
-               bitRate="96000"
-               sampleRate="16000"
-               channels="1" />
+               bitRate="320000"
+               sampleRate="48000"
+               channels="2" />
     </EncoderProfile>
 
-    <ImageEncoding quality="90" />
-    <ImageEncoding quality="80" />
-    <ImageEncoding quality="70" />
-    <ImageDecoding memCap="20000000" />
+    <ImageEncoding quality="100" />
+    <ImageEncoding quality="100" />
+    <ImageEncoding quality="100" />
+    <ImageDecoding memCap="40000000" />
 
 </CamcorderProfiles>
 
@@ -503,7 +503,7 @@
   <VideoEncoderCap name="h264" enabled="true"
       minBitRate="64000" maxBitRate="20000000"
       minFrameWidth="176" maxFrameWidth="1920"
-      minFrameHeight="144" maxFrameHeight="1088"
+      minFrameHeight="144" maxFrameHeight="1080"
       minFrameRate="1" maxFrameRate="30" />
 
   <VideoEncoderCap name="h263" enabled="true"
@@ -515,7 +515,7 @@
   <VideoEncoderCap name="m4v" enabled="true"
       minBitRate="64000" maxBitRate="20000000"
       minFrameWidth="176" maxFrameWidth="1920"
-      minFrameHeight="144" maxFrameHeight="1088"
+      minFrameHeight="144" maxFrameHeight="1080"
       minFrameRate="1" maxFrameRate="30" />
 
   <!-- [G][AUDIO_FWK_Start] 2012-07-12, sunghun1.jung@lge.com, [common] Change Audio Profile-->
@@ -523,18 +523,6 @@
       minBitRate="8000" maxBitRate="320000"
       minSampleRate="8000" maxSampleRate="48000"
       minChannels="1" maxChannels="2" />
-
-  <!-- [G][AUDIO_FWK_Start] 2012-07-12, sunghun1.jung@lge.com, [common] Support AAC+, AAC_ELD Encoding {-->
-  <AudioEncoderCap name="heaac" enabled="true"
-	minBitRate="8000" maxBitRate="64000"
-	minSampleRate="16000" maxSampleRate="48000"
-	minChannels="1" maxChannels="1" />
-
-  <AudioEncoderCap name="aaceld" enabled="true"
-	minBitRate="16000" maxBitRate="192000"
-	minSampleRate="16000" maxSampleRate="48000"
-	minChannels="1" maxChannels="1" />
-  <!-- [G][AUDIO_FWK_Start] 2012-07-12, sunghun1.jung@lge.com, [common] Support AAC+, AAC_ELD Encoding }-->
 
   <AudioEncoderCap name="amrwb" enabled="true"
         minBitRate="6600" maxBitRate="23050"
@@ -549,9 +537,10 @@
   <VideoDecoderCap name="wmv" enabled="true"/>
   <AudioDecoderCap name="wma" enabled="true"/>
 
-  <VideoEditorCap maxInputFrameWidth="1920" maxInputFrameHeight="1088" maxOutputFrameWidth="1920" maxOutputFrameHeight="1088" maxPrefetchYUVFrames="3"/>
+  <VideoEditorCap maxInputFrameWidth="1920" maxInputFrameHeight="1080" maxOutputFrameWidth="1920" maxOutputFrameHeight="1080" maxPrefetchYUVFrames="3"/>
 
   <ExportVideoProfile name="h263" profile="1" level="16"/>
   <ExportVideoProfile name="h264" profile="1" level="16"/>
   <ExportVideoProfile name="m4v" profile="1" level="16"/>
 </MediaSettings>
+
